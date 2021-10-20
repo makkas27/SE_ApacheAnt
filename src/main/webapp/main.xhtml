@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Ana's Web</title>
+    <h:outputStylesheet name="css/body.css"/>
+    <h:outputStylesheet name="css/header.css"/>
+</h:head>
+
+<h:body>
+    <table id="body-table">
+
+        <tr>
+            <th class="header">
+                <div>
+                    <p>Морозова Анастасия Александровна P3230</p>
+                    <p>Вариант 5416</p>
+                </div>
+            </th>
+        </tr>
+
+        <tr class="body">
+            <th class="choose-area">
+                <div class="graph">
+                    <svg id="graph_pic" height="300" width="300" xmlns="http://www.w3.org/2000/svg">
+
+                        <line stroke="black" x1="0" y1="150" x2="300" y2="150"></line>
+                        <line stroke="black" x1="150" y1="0" x2="150" y2="300"></line>
+                        <polygon fill="black" points="150,0 144,15 156,15" stroke="black"></polygon>
+                        <polygon fill="black" points="300,150 285,156 285,144" stroke="black"></polygon>
+
+                        <!-- Деления -->
+                        <line stroke="black" x1="200" y1="155" x2="200" y2="145"></line>
+                        <line stroke="black" x1="250" y1="155" x2="250" y2="145"></line>
+
+                        <line stroke="black" x1="50" y1="155" x2="50" y2="145"></line>
+                        <line stroke="black" x1="100" y1="155" x2="100" y2="145"></line>
+
+                        <line stroke="black" x1="145" y1="100" x2="155" y2="100"></line>
+                        <line stroke="black" x1="145" y1="50" x2="155" y2="50"></line>
+
+                        <line stroke="black" x1="145" y1="200" x2="155" y2="200"></line>
+                        <line stroke="black" x1="145" y1="250" x2="155" y2="250"></line>
+
+                        <!-- Подписи к делениям и осям -->
+                        <text fill="black" x="195" y="140">R/2</text>
+                        <text fill="black" x="250" y="140">R</text>
+
+                        <text fill="black" x="40" y="140">-R</text>
+                        <text fill="black" x="85" y="140">-R/2</text>
+
+                        <text fill="black" x="160" y="55">R</text>
+                        <text fill="black" x="160" y="105">R/2</text>
+
+                        <text fill="black" x="160" y="204">-R/2</text>
+                        <text fill="black" x="160" y="255">-R</text>
+
+                        <text fill="black" x="285" y="140">X</text>
+                        <text fill="black" x="160" y="15">Y</text>
+
+                        <!-- Квадрат -->
+                        <polygon fill="blue"
+                                 fill-opacity="0.2"
+                                 stroke="blue"
+                                 points="50,150 150,150 150,50 50,50"></polygon>
+
+                        <!-- Круг -->
+                        <path fill="blue"
+                              fill-opacity="0.2"
+                              stroke="blue"
+                              d="M 100 150 A 100 100, 90, 0, 0, 150 200 L 150 150"></path>
+
+                        <!-- Треугольник -->
+                        <polygon fill="blue"
+                                 fill-opacity="0.2"
+                                 stroke="blue"
+                                 points="150,150 200,150 150,200"></polygon>
+
+                    </svg>
+                </div>
+
+                <div>
+                    <h:form id="coordinates-form" method="post" action="main">
+                        <div class="checkbox-area">
+                            <p>Выберите X:</p>
+                            <div class="x">
+
+                            </div>
+
+                            <p>Выберите Y:</p>
+                            <div class="y">
+
+                            </div>
+
+                            <p>Выберите R:</p>
+                            <div class="r">
+
+                            </div>
+
+                            <div class="buttons-area">
+                                <button id="function-btn" type="submit" class="gradient-button" name="submit">Отправить</button>
+                            </div>
+                        </div>
+                    </h:form>
+                </div>
+
+            </th>
+        </tr>
+
+    </table>
+</h:body>
+
+</html>
