@@ -3,14 +3,16 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:pf="http://primefaces.org/ui"
+>
 
 <h:head>
     <title>Ana's Web</title>
     <h:outputStylesheet name="css/body.css"/>
     <h:outputStylesheet name="css/header.css"/>
+    <h:outputStylesheet name="css/slider.css"/>
 </h:head>
 
 <h:body>
@@ -30,23 +32,23 @@
                 <div class="graph">
                     <svg id="graph_pic" height="300" width="300" xmlns="http://www.w3.org/2000/svg">
 
-                        <line stroke="black" x1="0" y1="150" x2="300" y2="150"></line>
-                        <line stroke="black" x1="150" y1="0" x2="150" y2="300"></line>
-                        <polygon fill="black" points="150,0 144,15 156,15" stroke="black"></polygon>
-                        <polygon fill="black" points="300,150 285,156 285,144" stroke="black"></polygon>
+                        <line stroke="black" x1="0" y1="150" x2="300" y2="150"/>
+                        <line stroke="black" x1="150" y1="0" x2="150" y2="300"/>
+                        <polygon fill="black" points="150,0 144,15 156,15" stroke="black"/>
+                        <polygon fill="black" points="300,150 285,156 285,144" stroke="black"/>
 
                         <!-- Деления -->
-                        <line stroke="black" x1="200" y1="155" x2="200" y2="145"></line>
-                        <line stroke="black" x1="250" y1="155" x2="250" y2="145"></line>
+                        <line stroke="black" x1="200" y1="155" x2="200" y2="145"/>
+                        <line stroke="black" x1="250" y1="155" x2="250" y2="145"/>
 
-                        <line stroke="black" x1="50" y1="155" x2="50" y2="145"></line>
-                        <line stroke="black" x1="100" y1="155" x2="100" y2="145"></line>
+                        <line stroke="black" x1="50" y1="155" x2="50" y2="145"/>
+                        <line stroke="black" x1="100" y1="155" x2="100" y2="145"/>
 
-                        <line stroke="black" x1="145" y1="100" x2="155" y2="100"></line>
-                        <line stroke="black" x1="145" y1="50" x2="155" y2="50"></line>
+                        <line stroke="black" x1="145" y1="100" x2="155" y2="100"/>
+                        <line stroke="black" x1="145" y1="50" x2="155" y2="50"/>
 
-                        <line stroke="black" x1="145" y1="200" x2="155" y2="200"></line>
-                        <line stroke="black" x1="145" y1="250" x2="155" y2="250"></line>
+                        <line stroke="black" x1="145" y1="200" x2="155" y2="200"/>
+                        <line stroke="black" x1="145" y1="250" x2="155" y2="250"/>
 
                         <!-- Подписи к делениям и осям -->
                         <text fill="black" x="195" y="140">R/2</text>
@@ -68,19 +70,19 @@
                         <polygon fill="blue"
                                  fill-opacity="0.2"
                                  stroke="blue"
-                                 points="50,150 150,150 150,50 50,50"></polygon>
+                                 points="50,150 150,150 150,50 50,50"/>
 
                         <!-- Круг -->
                         <path fill="blue"
                               fill-opacity="0.2"
                               stroke="blue"
-                              d="M 100 150 A 100 100, 90, 0, 0, 150 200 L 150 150"></path>
+                              d="M 100 150 A 100 100, 90, 0, 0, 150 200 L 150 150"/>
 
                         <!-- Треугольник -->
                         <polygon fill="blue"
                                  fill-opacity="0.2"
                                  stroke="blue"
-                                 points="150,150 200,150 150,200"></polygon>
+                                 points="150,150 200,150 150,200"/>
 
                     </svg>
                 </div>
@@ -89,18 +91,31 @@
                     <h:form id="coordinates-form" method="post" action="main">
                         <div class="checkbox-area">
                             <p>Выберите X:</p>
-                            <div class="x">
-
+                            <div>
+                                <pf:selectOneMenu id="x" value="#{point.xCoordinate}" required="true">
+                                    <f:selectItem itemLabel="-2" itemValue="-2.0"/>
+                                    <f:selectItem itemLabel="-1.5" itemValue="-1.5"/>
+                                    <f:selectItem itemLabel="-1" itemValue="-1.0"/>
+                                    <f:selectItem itemLabel="-0.5" itemValue="-0.5"/>
+                                    <f:selectItem itemLabel="0" itemValue="0"/>
+                                    <f:selectItem itemLabel="0.5" itemValue="0.5"/>
+                                    <f:selectItem itemLabel="1" itemValue="1.0"/>
+                                    <f:selectItem itemLabel="1.5" itemValue="1.5"/>
+                                    <f:selectItem itemLabel="2" itemValue="2.0"/>
+                                </pf:selectOneMenu>
                             </div>
 
                             <p>Выберите Y:</p>
-                            <div class="y">
-
+                            <div>
+                                <pf:inputText placeholder="(-5;5)" id="y" value="#{point.yCoordinate}" required="true" maxlength="11">
+                                    <f:validateDoubleRange minimum="-4.999999999" maximum="4.999999999"/>
+                                </pf:inputText>
                             </div>
 
                             <p>Выберите R:</p>
-                            <div class="r">
-
+                            <div>
+                                <pf:inputText id="rVal" value="#{point.rValue}" disabled="true"/>
+                                <pf:slider for="rVal" step="0.25" minValue="1" maxValue="4" styleClass="slider"/>
                             </div>
 
                             <div class="buttons-area">

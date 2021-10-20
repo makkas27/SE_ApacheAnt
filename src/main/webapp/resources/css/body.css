@@ -10,6 +10,17 @@ body {
     cellspacing: 0;
 }
 
+.graph {
+    display: flex;
+    flex-direction: row;
+    margin: 25px;
+}
+
+#graph_pic {
+    padding: 10px;
+    alignment: center;
+}
+
 .choose-area {
     display: flex;
     flex-direction: row;
@@ -27,8 +38,8 @@ body {
 }
 
 div[class="checkbox-area"] {
-    width: 500px;
-    height: 250px;
+    width: 400px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -86,4 +97,25 @@ th[class="col"] {
 
 .buttons-area {
     flex-direction: row;
+}
+
+.clock-area {
+    margin: auto;
+    max-width: 500px;
+    min-width: 100px;
+    background: white;
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 32px;
+    padding: 10px;
+    font-weight: bold;
+    border-top: 10px solid midnightblue;
+    margin-top: 100px;
+}
+
+#date
+{
+    display: block;
+    font-weight: normal;
+    font-size: 18px;
 }

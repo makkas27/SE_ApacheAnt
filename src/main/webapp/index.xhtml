@@ -10,6 +10,7 @@
     <title>Ana's Web</title>
     <h:outputStylesheet name="css/body.css"/>
     <h:outputStylesheet name="css/header.css"/>
+    <h:outputScript name="js/index.js"/>
 </h:head>
 
 <h:body>
@@ -26,7 +27,14 @@
 
         <tr class="body">
             <th>
-                <h:button value="К форме" outcome="main" styleClass="gradient-button"/>
+                <div>
+                    <div class="clock-area">
+                        <span id="clock"></span>
+                    <br/>
+                        <span id="date"></span>
+                    </div>
+                    <h:button value="К форме" outcome="main" styleClass="gradient-button"/>
+                </div>
             </th>
         </tr>
 
