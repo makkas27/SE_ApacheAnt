@@ -13,6 +13,7 @@
     <h:outputStylesheet name="css/body.css"/>
     <h:outputStylesheet name="css/header.css"/>
     <h:outputStylesheet name="css/slider.css"/>
+    <h:outputScript name="js/validate.js"/>
 </h:head>
 
 <h:body>
@@ -88,7 +89,7 @@
                 </div>
 
                 <div>
-                    <h:form id="coordinates-form" method="post" action="main">
+                    <h:form id="coordinates-form">
                         <div class="checkbox-area">
                             <p>Выберите X:</p>
                             <div>
@@ -105,26 +106,54 @@
                                 </pf:selectOneMenu>
                             </div>
 
-                            <p>Выберите Y:</p>
+                            <p>Выберите Y (-5;5):</p>
                             <div>
-                                <pf:inputText placeholder="(-5;5)" id="y" value="#{point.yCoordinate}" required="true" maxlength="11">
-                                    <f:validateDoubleRange minimum="-4.999999999" maximum="4.999999999"/>
-                                </pf:inputText>
+                                <pf:inputText placeholder="(-5;5)" id="y" value="#{point.yCoordinate}" required="true" maxlength="11" type="text" label="Y"/>
                             </div>
 
                             <p>Выберите R:</p>
                             <div>
                                 <pf:inputText id="rVal" value="#{point.rValue}" disabled="true"/>
-                                <pf:slider for="rVal" step="0.25" minValue="1" maxValue="4" styleClass="slider"/>
+                                <pf:slider for="rVal" step="0.25" minValue="1" maxValue="4" styleClass="slider" required="true"/>
                             </div>
 
                             <div class="buttons-area">
-                                <button id="function-btn" type="submit" class="gradient-button" name="submit">Отправить</button>
+                                <h:commandButton id="function-btn" type="submit" class="gradient-button" value="Отправить" onclick="validate()" action="#{point.checkPoint}"/>
                             </div>
                         </div>
                     </h:form>
                 </div>
 
+            </th>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="table-area">
+                    <h:dataTable id="main-table" value="#{point.points}">
+                        <f:facet name="header">История выполнений</f:facet>
+                        <h:column>
+                            <f:facet name="header">X</f:facet>
+                            #{point.xCoordinate}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Y</f:facet>
+                            #{point.yCoordinate}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">R</f:facet>
+                            #{point.rValue}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Текущее время</f:facet>
+                            #{point.time}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Результат</f:facet>
+                            #{point.result}
+                        </h:column>
+                    </h:dataTable>
+                </div>
             </th>
         </tr>
 
