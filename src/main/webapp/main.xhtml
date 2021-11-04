@@ -113,8 +113,9 @@
 
                             <p>Выберите R:</p>
                             <div>
-                                <pf:inputText id="rVal" value="#{point.rValue}" disabled="true"/>
-                                <pf:slider for="rVal" step="0.25" minValue="1" maxValue="4" styleClass="slider" required="true"/>
+                                <h:outputText id="output"/>
+                                <h:inputHidden id="rVal" value="#{point.rValue}"/>
+                                <pf:slider for="rVal" step="0.25" minValue="1" maxValue="4" display="output" style="width: 200px" displayTemplate="R= {value}"/>
                             </div>
 
                             <div class="buttons-area">
@@ -130,27 +131,27 @@
         <tr>
             <th>
                 <div class="table-area">
-                    <h:dataTable id="main-table" value="#{point.points}">
-                        <f:facet name="header">История выполнений</f:facet>
-                        <h:column>
+                    <h:dataTable id="main-table" value="#{point.points}" var="dot">
+                        <f:facet name="header" id="caption">История выполнений</f:facet>
+                        <h:column class="column">
                             <f:facet name="header">X</f:facet>
-                            #{point.xCoordinate}
+                            #{dot.x}
                         </h:column>
-                        <h:column>
+                        <h:column class="column">
                             <f:facet name="header">Y</f:facet>
-                            #{point.yCoordinate}
+                            #{dot.y}
                         </h:column>
-                        <h:column>
+                        <h:column class="column">
                             <f:facet name="header">R</f:facet>
-                            #{point.rValue}
+                            #{dot.r}
                         </h:column>
-                        <h:column>
+                        <h:column class="column">
                             <f:facet name="header">Текущее время</f:facet>
-                            #{point.time}
+                            #{dot.time}
                         </h:column>
-                        <h:column>
+                        <h:column class="column">
                             <f:facet name="header">Результат</f:facet>
-                            #{point.result}
+                            #{dot.result}
                         </h:column>
                     </h:dataTable>
                 </div>

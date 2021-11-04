@@ -5,8 +5,8 @@ import db.PointInsertRepository;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
 
 @ManagedBean
@@ -14,7 +14,7 @@ import java.util.LinkedList;
 public class Point {
     private float xCoordinate;
     private float yCoordinate;
-    private float rValue = 2.5f;
+    private float rValue = 1.0f;
     private String result;
     private LocalDateTime time;
 
@@ -66,25 +66,21 @@ public class Point {
     }
 
     public LinkedList<PointEntity> getPoints() {
-        System.out.println(points);
         return points;
     }
 
     public void checkPoint() {
         PointEntity pointDB = new PointEntity();
         boolean isInFigure = isInTriangle() || isInRectangle() || isInCircle();
-        LocalDateTime time = LocalDateTime.now();
-        pointDB.setXCoordinate(this.xCoordinate);
-        pointDB.setYCoordinate(this.yCoordinate);
-        pointDB.setRValue(this.rValue);
-        pointDB.setTime(time);
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("HH:mm:ss dd.MM.yyyy");
+        pointDB.setTime(dateFormat.format(LocalDateTime.now()));
+        pointDB.setX(this.xCoordinate);
+        pointDB.setY(this.yCoordinate);
+        pointDB.setR(this.rValue);
         if (isInFigure) pointDB.setResult("Попадание");
         else pointDB.setResult("Промах");
-        if (insertRepository.insertPoint(pointDB)) {
-            points.add(pointDB);
-        } else {
-
-        }
+        insertRepository.insertPoint(pointDB);
+        points.add(pointDB);
     }
 
     private boolean isInTriangle() {

@@ -1,37 +1,27 @@
 package db;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-@Data
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "points")
+@ToString
+@Getter
+@Setter
 public class PointEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     @Column(name = "x")
-    private float xCoordinate;
+    private Float x;
     @Column(name = "y")
-    private float yCoordinate;
+    private Float y;
     @Column(name = "r")
-    private float rValue;
+    private Float r;
     private String result;
-    private LocalDateTime time;
-
-    public String getStringTime() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss  dd.MM.yy");
-        return time.format(formatter);
-    }
-
-
-
-
+    private String time;
 }

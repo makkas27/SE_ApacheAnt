@@ -60,12 +60,7 @@ div[class="checkbox-area"] {
     color: indianred;
 }
 
-#main-table caption {
-    padding: 10px;
-    color: black;
-}
-
-th[class="col"] {
+#main-table th {
     background-color: bisque;
     border: 2px groove darkred;
     font-weight: lighter;
@@ -113,8 +108,7 @@ th[class="col"] {
     margin-top: 100px;
 }
 
-#date
-{
+#date {
     display: block;
     font-weight: normal;
     font-size: 18px;

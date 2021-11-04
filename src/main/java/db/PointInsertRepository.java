@@ -13,9 +13,9 @@ public class PointInsertRepository implements Serializable {
     public boolean insertPoint(PointEntity point) {
         entityManager.getTransaction().begin();
         entityManager.createNativeQuery("INSERT INTO points (x, y, r, time, result) VALUES (?,?,?,?,?)")
-                .setParameter(1, point.getXCoordinate())
-                .setParameter(2, point.getYCoordinate())
-                .setParameter(3, point.getRValue())
+                .setParameter(1, point.getX())
+                .setParameter(2, point.getY())
+                .setParameter(3, point.getR())
                 .setParameter(4, point.getTime())
                 .setParameter(5, point.getResult())
                 .executeUpdate();
