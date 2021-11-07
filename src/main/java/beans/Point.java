@@ -94,4 +94,5 @@ public class Point {
     private boolean isInCircle() {
         return xCoordinate <= 0 && yCoordinate <= 0 && xCoordinate * xCoordinate + yCoordinate * yCoordinate <= rValue * rValue;
     }
+
 }

@@ -27,7 +27,7 @@ body {
     justify-content: space-around;
     padding: 20px;
     border: 2px groove #00538b;
-    margin: 50px 300px;
+    margin: 50px 300px 10px;
     background-color: #c6d9e8;
     box-shadow: 0 0 30px -3px #00538b;
 }
@@ -51,6 +51,7 @@ div[class="checkbox-area"] {
     display: flex;
     justify-content: center;
     padding: 20px 0;
+
 }
 
 #main-table {
