@@ -2,6 +2,13 @@
 <project name="web3" basedir=".">
     <property file="build.properties"/>
 
+<!--    need to add ant-contrib-1.0b3.jar to ${ANT_HOME}/lib to make it work-->
+    <taskdef resource="net/sf/antcontrib/antlib.xml">
+        <classpath>
+            <pathelement location="${antcontrib}"/>
+        </classpath>
+    </taskdef>
+
     <path id="classpath">
         <pathelement location="lib/eclipselink-2.7.1.jar"/>
         <pathelement location="lib/javax.persistence-api-2.2.jar"/>
@@ -46,6 +53,41 @@
             <success source="${success}" duration="6000"/>
             <fail source="${fail}" duration="5000"/>
         </sound>
+    </target>
+
+    <target name="diff" description="Проверка состояния рабочей копии, и, если изменения не касаются классов, указанных в файле параметров, выполняет commit в репозиторий git">
+<!--        exec- executes a system command. result is saved as "git_status_result"-->
+<!--        here we execute "git status"-->
+        <exec executable="git" outputproperty="git_status_result">
+            <arg value="status"/>
+        </exec>
+<!--        for each java file from list check if it was changed aka mentioned in "git_diff_result-->
+        <for param="filename" list="${names}" delimiter=",">
+            <sequential>
+                <antcall target="find_occasions"/>
+            </sequential>
+        </for>
+        <antcall target="commit"/>
+    </target>
+
+    <target name="find_occasions">
+        <condition property="files_were_changed">
+            <contains string="${git_status_result}" substring="${filename}"/>
+        </condition>
+    </target>
+
+    <target name="commit" unless="${files_were_changed}">
+        <exec executable="git">
+            <arg value="add"/>
+            <arg value="."/>
+        </exec>
+
+        <exec executable="git">
+            <arg value="commit"/>
+            <arg value="-m 'ant commit'"/>
+        </exec>
+
+        <echo>CHANGES WERE COMMITTED</echo>
     </target>
 
 </project>

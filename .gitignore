@@ -1,0 +1,5 @@
+target
+.idea
+ant
+lib
+src/main/resources/META-INF/persistence.xml
