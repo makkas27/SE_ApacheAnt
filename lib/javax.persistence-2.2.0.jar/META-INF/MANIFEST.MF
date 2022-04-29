@@ -1,0 +1,710 @@
+Manifest-Version: 1.0
+Implementation-Vendor: Eclipse.org - EclipseLink Project
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Built-By: lukas
+Bundle-SymbolicName: javax.persistence
+Bundle-Activator: org.eclipse.persistence.javax.persistence.osgi.Activ
+ ator
+Bundle-Version: 2.2.0.v201708071007
+Export-Package: javax.persistence;jpa="2.2";version="2.2.0",javax.pers
+ istence.criteria;jpa="2.2";version="2.2.0",javax.persistence.metamode
+ l;jpa="2.2";version="2.2.0",javax.persistence.spi;jpa="2.2";version="
+ 2.2.0",org.osgi.service.jpa;version="1.1.0"
+Specification-Version: 2.2
+Build-Jdk: 1.8.0_141
+Bundle-ClassPath: .
+Specification-Vendor: Oracle
+Bundle-Vendor: Eclipse.org - EclipseLink Project
+Bundle-Name: Java Persistence API 2.2
+Extension-Name: javax.persistence
+Archiver-Version: Plexus Archiver
+Created-By: 1.6.0_35 (Sun Microsystems Inc.)
+Implementation-Version: 2.2.0
+Bundle-ManifestVersion: 2
+Import-Package: javax.sql;resolution:=optional,org.osgi.framework;reso
+ lution:=optional,org.osgi.service.jpa;version="1.1.0"
+
+Name: javax/persistence/OneToMany.class
+SHA1-Digest: VxqVsRgRvSQn+FlvEfl8E4EY1bk=
+
+Name: javax/persistence/Cache.class
+SHA1-Digest: C5u90UXphvNbc/hkMs6RBSCwK4g=
+
+Name: javax/persistence/OrderColumn.class
+SHA1-Digest: 8OadHBPtpQcP8SRfc/w8D7KJhTc=
+
+Name: javax/persistence/spi/PersistenceProviderResolverHolder$DefaultP
+ ersistenceProviderResolver$PersistenceProviderReference.class
+SHA1-Digest: gxhAzNP4sVt1b3qQ0HHHadqcEGo=
+
+Name: javax/persistence/AttributeOverride.class
+SHA1-Digest: wahA533rtwlaSx8Lfs0q9v5cVt0=
+
+Name: javax/persistence/Inheritance.class
+SHA1-Digest: x6EdymRG7MkYqQ6aZTb/Vho/v24=
+
+Name: javax/persistence/MapKeyColumn.class
+SHA1-Digest: LOPPNipeExIxDbYgJoKDskyBwR8=
+
+Name: javax/persistence/EntityResult.class
+SHA1-Digest: rCAIQs9vuwcESlDrit5M52HpINY=
+
+Name: javax/persistence/SequenceGenerator.class
+SHA1-Digest: IYaaCQnfJNdoMNIoyUzx0T0tQA0=
+
+Name: javax/persistence/metamodel/CollectionAttribute.class
+SHA1-Digest: BrfoPDgff0Ypsqo4hRDMrsPuZ1E=
+
+Name: javax/persistence/MapKey.class
+SHA1-Digest: 0iOccZMS6X0mQ/e93uy3c32MkmY=
+
+Name: javax/persistence/criteria/CriteriaBuilder$Trimspec.class
+SHA1-Digest: xe5zOoMYSsVV+gBZ0I7ntSyf4HI=
+
+Name: javax/persistence/OneToOne.class
+SHA1-Digest: MD2dUcjaddjNy3Zg8+J6l77q2us=
+
+Name: javax/persistence/criteria/CollectionJoin.class
+SHA1-Digest: JZJbpZlNxs/gbHtQZOIzhBVKSL8=
+
+Name: javax/persistence/ExcludeSuperclassListeners.class
+SHA1-Digest: JAkxRcTgzHj19UkdcXT/X0Rng/c=
+
+Name: javax/persistence/criteria/From.class
+SHA1-Digest: vPDBKYiF9xmhZhoAoMKMBhc5yqA=
+
+Name: javax/persistence/AttributeOverrides.class
+SHA1-Digest: KA2oH8Lg8j4nJnn4840CLuEfVNE=
+
+Name: javax/persistence/Persistence.class
+SHA1-Digest: cKn/1ejf24REkPshEoX/jOnF+y0=
+
+Name: javax/persistence/spi/PersistenceProviderResolverHolder$DefaultP
+ ersistenceProviderResolver$LoaderReference.class
+SHA1-Digest: FOtVkUEIfCuVqx3/lQYkNz6vDZw=
+
+Name: javax/persistence/Converter.class
+SHA1-Digest: +DmZd+f+YULJ5fM4+qe08QjTB00=
+
+Name: javax/persistence/package-info.class
+SHA1-Digest: gH3cNxaA7D0TfamF8Ot0DHfhpA4=
+
+Name: javax/persistence/spi/PersistenceUnitTransactionType.class
+SHA1-Digest: igtTa6DInCh022vGcGkd2ko7bKs=
+
+Name: javax/persistence/persistence_2_2.xsd
+SHA1-Digest: cYs5UWZlkbk2eW5hFkqKzcyQ3mY=
+
+Name: javax/persistence/criteria/CriteriaUpdate.class
+SHA1-Digest: 5qF0r4u/XIFszoaOVzXXNW6Cm44=
+
+Name: javax/persistence/EntityTransaction.class
+SHA1-Digest: vReIZLj/gizfsb2fUXcjgOD5yyo=
+
+Name: javax/persistence/criteria/Fetch.class
+SHA1-Digest: g+s5UmQlH2UIl2H0cU9CCWVSynI=
+
+Name: javax/persistence/orm_1_0.xsd
+SHA1-Digest: fZQ3GEedkL6korOUtAmOKfjuS4c=
+
+Name: javax/persistence/spi/PersistenceProviderResolverHolder.class
+SHA1-Digest: pnOvakjJU24lDFBWf9mQ00JFEes=
+
+Name: javax/persistence/NamedQuery.class
+SHA1-Digest: Un+93hQeOiYxVJuch+zv0J2ehIY=
+
+Name: javax/persistence/JoinTable.class
+SHA1-Digest: HymdoUsxtXdLD6YVeVajaqw71XU=
+
+Name: javax/persistence/PreRemove.class
+SHA1-Digest: QWqoOuekEPbRlLtbapfAs+BblW4=
+
+Name: javax/persistence/spi/ProviderUtil.class
+SHA1-Digest: SMEHHh8CWfYg7Hv4cPpQ5YyEZCA=
+
+Name: javax/persistence/ManyToOne.class
+SHA1-Digest: /C7dTM5V8VkhbWVaeuny63hbgkU=
+
+Name: javax/persistence/metamodel/Type$PersistenceType.class
+SHA1-Digest: 9SXlgxb0MlRv5t8nGc6NbIhIfe8=
+
+Name: javax/persistence/Id.class
+SHA1-Digest: QhTl39dtCpzXp01fFt+CyM4XmJE=
+
+Name: javax/persistence/EnumType.class
+SHA1-Digest: ur7yYZ41ynEnqG11lFwe7Sd6rUk=
+
+Name: javax/persistence/CascadeType.class
+SHA1-Digest: mQezXL6NOCEhS5FemYP2OYyZzEw=
+
+Name: javax/persistence/Temporal.class
+SHA1-Digest: CEw0c7mjZHlzkwMnHXV3KrYPPxQ=
+
+Name: javax/persistence/PersistenceProperty.class
+SHA1-Digest: uW/Q8OAkVNWgZlhPF8BALIunNoY=
+
+Name: javax/persistence/criteria/Path.class
+SHA1-Digest: fgrb3DBnfxxIcflmtE3ETShT0GI=
+
+Name: javax/persistence/MapKeyJoinColumn.class
+SHA1-Digest: WzFOm1hSxZItAG3RFViuNkcbQE8=
+
+Name: javax/persistence/QueryTimeoutException.class
+SHA1-Digest: pxOxbovGx9nmdblY5SaBgQ/vAj8=
+
+Name: javax/persistence/metamodel/Type.class
+SHA1-Digest: J5lsKkfENHJaFg+27kSSViF4LjY=
+
+Name: javax/persistence/NamedQueries.class
+SHA1-Digest: UYy1QnT6w/Mt9Jnxg2HUUqx4138=
+
+Name: javax/persistence/metamodel/PluralAttribute$CollectionType.class
+SHA1-Digest: HkaBNp4PTyUMRZZ9X6BD2260knA=
+
+Name: javax/persistence/NamedEntityGraph.class
+SHA1-Digest: UxDpoaKWO6QqiCBj/y2MKGojtq8=
+
+Name: javax/persistence/ManyToMany.class
+SHA1-Digest: J2cVZPBR7UrZ+vpchq/u9/taqpY=
+
+Name: javax/persistence/metamodel/PluralAttribute.class
+SHA1-Digest: b58zA8JDYTYdJHGJ2iqGm2ZUJXk=
+
+Name: javax/persistence/criteria/SetJoin.class
+SHA1-Digest: AlECIkvwqEhXS2TXf3AGlTwYFtE=
+
+Name: javax/persistence/TypedQuery.class
+SHA1-Digest: xo9lj+HDlnXPJ7mEVTLfKUGmDPo=
+
+Name: javax/persistence/metamodel/Bindable.class
+SHA1-Digest: 9LrVxaBQEinakb0rNViW9CJiQ10=
+
+Name: javax/persistence/SqlResultSetMapping.class
+SHA1-Digest: GAbfQG3h5K24QxgZG+UB5gLKlM0=
+
+Name: javax/persistence/metamodel/SingularAttribute.class
+SHA1-Digest: Q2UDBrel7zfGDWQzTyOj0AjuzwU=
+
+Name: javax/persistence/metamodel/BasicType.class
+SHA1-Digest: k7jLemVcVRFFE+Jy/5iuHx+k34A=
+
+Name: javax/persistence/orm_2_2.xsd
+SHA1-Digest: PHZbbwyf9O/a6eUHKacgLb9cBIU=
+
+Name: org/eclipse/persistence/javax/persistence/osgi/OSGiProviderResol
+ ver$ForwardingProviderUtil.class
+SHA1-Digest: DBDhT012Nr6bEczNhmlcs9wZtPw=
+
+Name: javax/persistence/EntityManagerFactory.class
+SHA1-Digest: k8fJFBvD3H9/3EfYhj+1UagDcEM=
+
+Name: javax/persistence/metamodel/package-info.class
+SHA1-Digest: iwy/0hql/C+QEiTn7ZBzS3NJtxM=
+
+Name: javax/persistence/FetchType.class
+SHA1-Digest: vvLnVFzlWfCzZ27Rys5dFfrczG0=
+
+Name: javax/persistence/Entity.class
+SHA1-Digest: yWob8YKkUXtRg8kSmX0YNv9Id2E=
+
+Name: javax/persistence/SharedCacheMode.class
+SHA1-Digest: A6Zecmv3S4Nu5LdkikLl9xBUKf8=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: nqMQScU4o9yBdkd8m4Coh5HuPuA=
+
+Name: javax/persistence/ValidationMode.class
+SHA1-Digest: QtRqz7RwddkNNAMrwFZqVNvNpm0=
+
+Name: javax/persistence/TemporalType.class
+SHA1-Digest: /76AySu1CjnrqoPrCc++i/EPIvQ=
+
+Name: javax/persistence/QueryHint.class
+SHA1-Digest: e+AoBLxr08I4sOZEiMUHwJXvjD8=
+
+Name: javax/persistence/AccessType.class
+SHA1-Digest: vV1+xDpIXusP82EmxRRX40FhSe8=
+
+Name: javax/persistence/persistence_2_1.xsd
+SHA1-Digest: eI/wkf7/kKMfeIA9xWxgmJlPm7Q=
+
+Name: javax/persistence/PostRemove.class
+SHA1-Digest: DmPcxIATJvZFShALel2hQD05nf0=
+
+Name: javax/persistence/spi/ClassTransformer.class
+SHA1-Digest: S04jfUM/6gCvi1E2kIoqqVWbyI4=
+
+Name: javax/persistence/ElementCollection.class
+SHA1-Digest: +5mmtpVi+wwhS8XKO5XpESBxXVc=
+
+Name: javax/persistence/OrderBy.class
+SHA1-Digest: b1aN9Ef1hD+k1ItGO1szMJ+Hakc=
+
+Name: javax/persistence/Query.class
+SHA1-Digest: UoiS5w3op62fJuQZWPLMYv5sdGA=
+
+Name: javax/persistence/PreUpdate.class
+SHA1-Digest: iA3HAiEg2oFyyZC//cdKJohuOV0=
+
+Name: javax/persistence/NamedStoredProcedureQuery.class
+SHA1-Digest: smMEW+3rS+nayAdVFyvWYXp5040=
+
+Name: javax/persistence/PostPersist.class
+SHA1-Digest: QpVDLQKrb3B2u6wSzPN806Vhzhc=
+
+Name: javax/persistence/MapKeyClass.class
+SHA1-Digest: FRdRESmEEx+5fzGh62eHYo/EcUE=
+
+Name: javax/persistence/AttributeConverter.class
+SHA1-Digest: eFdTYYdlaPGgTjYuyjOaI36RZ+E=
+
+Name: javax/persistence/TableGenerator.class
+SHA1-Digest: WtXmqi5n/hfpztnz9Kgdy/+eBcA=
+
+Name: javax/persistence/criteria/CommonAbstractCriteria.class
+SHA1-Digest: Nm0PAM2FPUTX+bxMAmBx5w7D/4Y=
+
+Name: javax/persistence/PersistenceContextType.class
+SHA1-Digest: NbakErkAZ2jdk0xVDyr5pPN4m+M=
+
+Name: javax/persistence/FlushModeType.class
+SHA1-Digest: PoLjJK2/AAbEDbpr+nGhPydwFYM=
+
+Name: javax/persistence/criteria/CompoundSelection.class
+SHA1-Digest: 5N1bHp+zQQk7YvVoa8caUDY788U=
+
+Name: javax/persistence/TransactionRequiredException.class
+SHA1-Digest: S4Ba+JwAqCczD+dmvl+Q1S9e3sc=
+
+Name: javax/persistence/GenerationType.class
+SHA1-Digest: i820lLWjLbENQdT8PWEF9P9x4pY=
+
+Name: javax/persistence/criteria/package-info.class
+SHA1-Digest: ovXJsko7bzUpth4Yyi1thGpCocs=
+
+Name: javax/persistence/criteria/MapJoin.class
+SHA1-Digest: AdsCM28q4RBjcgBPH3BWFqF9Qnk=
+
+Name: javax/persistence/spi/package-info.class
+SHA1-Digest: lx/qFY+Wq47M1cy0J1PQsFH0H2c=
+
+Name: javax/persistence/ParameterMode.class
+SHA1-Digest: fa000bVcg9WUUwdnElLDdjQ3rTo=
+
+Name: javax/persistence/spi/PersistenceUnitInfo.class
+SHA1-Digest: 7j7qx+ETIK1RJO6E3HhnZMjy9a8=
+
+Name: javax/persistence/NamedStoredProcedureQueries.class
+SHA1-Digest: H2KfXWSvRLkC3oxg69yZLie+HRM=
+
+Name: javax/persistence/EntityExistsException.class
+SHA1-Digest: QdykvqkkNMiqjB0OG5NGmhMPOEc=
+
+Name: javax/persistence/Enumerated.class
+SHA1-Digest: PS0j1JeElZwCZ17s8FXVxLcUeA8=
+
+Name: javax/persistence/metamodel/Bindable$BindableType.class
+SHA1-Digest: mRulJM1O0LPQjMRmq7zrYXdjzbw=
+
+Name: javax/persistence/spi/PersistenceProviderResolver.class
+SHA1-Digest: upuXmb6BtBc72Ity1uPc09SPGGc=
+
+Name: javax/persistence/criteria/JoinType.class
+SHA1-Digest: KJBzOFb/vE4FLy/Y3Sxi0J/oZ70=
+
+Name: javax/persistence/DiscriminatorType.class
+SHA1-Digest: ExSezhClCCE7IEhv57xfuStRc/0=
+
+Name: javax/persistence/ConstructorResult.class
+SHA1-Digest: JSu9TdFO+BoLotv48d3/2detW0I=
+
+Name: javax/persistence/OptimisticLockException.class
+SHA1-Digest: gTFQZra30+MeWHyUo6/aB3EwA3w=
+
+Name: javax/persistence/criteria/Subquery.class
+SHA1-Digest: kfR+URbnoVMwy2kcLqsv8aDhL08=
+
+Name: javax/persistence/criteria/Predicate.class
+SHA1-Digest: +E8o/D0h1V2TFQ4bPgU5pKdofOs=
+
+Name: javax/persistence/criteria/PluralJoin.class
+SHA1-Digest: zLTEAzZnSHZwwhEpAT8GIBdwt5k=
+
+Name: javax/persistence/orm_2_1.xsd
+SHA1-Digest: qOBjR+8WD9JQCioA1E1VL/wyN/U=
+
+Name: org/eclipse/persistence/javax/persistence/osgi/Activator.class
+SHA1-Digest: Xdu7hfKbDqKlzpuQxtOtY3HixWE=
+
+Name: javax/persistence/ColumnResult.class
+SHA1-Digest: EMwzF2d/xkL9ZkGOAVcammZUKLY=
+
+Name: javax/persistence/spi/PersistenceProviderResolverHolder$DefaultP
+ ersistenceProviderResolver$CacheKey.class
+SHA1-Digest: aGLjQNJq/eyhVLldFTbnE9GITsM=
+
+Name: javax/persistence/StoredProcedureParameter.class
+SHA1-Digest: xdrwy+Y4xtmQqOD/FxnxvFY7MLA=
+
+Name: javax/persistence/RollbackException.class
+SHA1-Digest: qRLFBj1CgUbkw3dnkDbA8BCsILg=
+
+Name: javax/persistence/criteria/Selection.class
+SHA1-Digest: jMeCaCPHM21AJVuMTdtiraby4BI=
+
+Name: javax/persistence/CollectionTable.class
+SHA1-Digest: nRZ4+IDbVg1dXYFrz626N0DVeUQ=
+
+Name: javax/persistence/PessimisticLockScope.class
+SHA1-Digest: 2vosmwOIdI64/2ADpt/GAiIyE1Q=
+
+Name: javax/persistence/ConstraintMode.class
+SHA1-Digest: iMFwWp0sdnXkIuZDRdfIpvRjbdM=
+
+Name: javax/persistence/metamodel/ListAttribute.class
+SHA1-Digest: JOeu6qVUavnBVu5+St7J4k7o4Hw=
+
+Name: javax/persistence/Version.class
+SHA1-Digest: u7+Ps9bVom19NGlNndhjksGAkao=
+
+Name: javax/persistence/ForeignKey.class
+SHA1-Digest: TrPSzElcOWuj9s8M2AYu3BL2EfI=
+
+Name: javax/persistence/criteria/Predicate$BooleanOperator.class
+SHA1-Digest: 6CxBud+LL1uSPYTLDGjMNujNh2k=
+
+Name: javax/persistence/MappedSuperclass.class
+SHA1-Digest: ILwfznekHXm6LM9LTriay3/Z4Eo=
+
+Name: javax/persistence/NamedSubgraph.class
+SHA1-Digest: 4R8seU2IfWbk1bRdZViOp4Fb13Q=
+
+Name: javax/persistence/metamodel/Attribute$PersistentAttributeType.cl
+ ass
+SHA1-Digest: C9D98dJrJ6xQEb27vHI54HFOFCU=
+
+Name: javax/persistence/SecondaryTable.class
+SHA1-Digest: hc8+m7UXgf3fWwM+A9plkDo1NkI=
+
+Name: javax/persistence/TableGenerators.class
+SHA1-Digest: aaeqP7BukaffGwXveBJU6aJ8yOo=
+
+Name: javax/persistence/CacheStoreMode.class
+SHA1-Digest: oUB2veLozdKHAZuWpxl4oCjMGjw=
+
+Name: javax/persistence/persistence_2_0.xsd
+SHA1-Digest: RfOm0oRHBFjRt3ONYtHuE68ehiE=
+
+Name: license.html
+SHA1-Digest: EQYcC4FF34XyzwwZy/Zdhq9gb/0=
+
+Name: javax/persistence/FieldResult.class
+SHA1-Digest: a0ys3HAX1VYzjp4C36Jq2ZDNapc=
+
+Name: javax/persistence/Embeddable.class
+SHA1-Digest: YhZIbKfEXgyf/vPha6lGh4ytXtU=
+
+Name: org/osgi/service/jpa/EntityManagerFactoryBuilder.class
+SHA1-Digest: zRiZLN6iT1c9JZhct9JKAk1Nc2w=
+
+Name: javax/persistence/ExcludeDefaultListeners.class
+SHA1-Digest: 35l7Vrmgc7liWTdmwzq9a2khxnM=
+
+Name: javax/persistence/metamodel/Metamodel.class
+SHA1-Digest: +0X9qDwCcX5hV71MaK+OtnUvME4=
+
+Name: javax/persistence/PostUpdate.class
+SHA1-Digest: oK+TwQ8XJIuUIeozNVKIT1jx1g4=
+
+Name: javax/persistence/metamodel/MapAttribute.class
+SHA1-Digest: 3N/u6IfDL3t3mBlzKCN+SBJb/D0=
+
+Name: javax/persistence/AttributeNode.class
+SHA1-Digest: 0oXVR5DCs+ad4KFZGEfaNFAqX5Q=
+
+Name: javax/persistence/Subgraph.class
+SHA1-Digest: L0l6cuoJ/LPJkShzN93zPQoHC9g=
+
+Name: javax/persistence/NamedEntityGraphs.class
+SHA1-Digest: lE/WoociKd/ugLQMHAduq9+tj10=
+
+Name: javax/persistence/TupleElement.class
+SHA1-Digest: hj5ZgUKEw90sOQArzSj1shrmnbU=
+
+Name: javax/persistence/criteria/FetchParent.class
+SHA1-Digest: EuGZt/9Byd1+1FhxEXWI56PRjOY=
+
+Name: javax/persistence/criteria/AbstractQuery.class
+SHA1-Digest: PCZPT16s9dhCqkyWQYCrM/W0GUs=
+
+Name: javax/persistence/criteria/Expression.class
+SHA1-Digest: jKjkAZlL17zgvndSx2OhOyluEZA=
+
+Name: javax/persistence/PessimisticLockException.class
+SHA1-Digest: LN2ArqMG0Huo1+I21ZsE3e4lL+4=
+
+Name: javax/persistence/metamodel/IdentifiableType.class
+SHA1-Digest: APz44aWwlSEgFOV30H8/lb0V00k=
+
+Name: javax/persistence/spi/PersistenceProvider.class
+SHA1-Digest: aPjJ0ah6nU+NpsDm3rIJy9hniKY=
+
+Name: javax/persistence/Table.class
+SHA1-Digest: NOgYRTKy2xxADN5CSJFf5ESUJMg=
+
+Name: javax/persistence/Index.class
+SHA1-Digest: c8Bn2zUequhBz3gQ63ztgQ0tves=
+
+Name: javax/persistence/DiscriminatorColumn.class
+SHA1-Digest: 2F+U9fy3URmKmrOtDoBf9FVm/Ek=
+
+Name: javax/persistence/criteria/Root.class
+SHA1-Digest: bgiZ9Gb5+pPAucDCk00FE8FhPfY=
+
+Name: javax/persistence/SequenceGenerators.class
+SHA1-Digest: S+ZLug3GP2eCX7KrHOQ8nUx0Qpo=
+
+Name: javax/persistence/Access.class
+SHA1-Digest: LTJsmrz3oditJBfR7Py4pd3hoKA=
+
+Name: javax/persistence/AssociationOverrides.class
+SHA1-Digest: Bw4bbR0sBnbZcfm0niB2FQ8iYTg=
+
+Name: javax/persistence/criteria/ListJoin.class
+SHA1-Digest: TIQrKS304Tdd4eOjr6870tNHccM=
+
+Name: javax/persistence/Cacheable.class
+SHA1-Digest: nb396GjSYf/rRvIEWDEaLXFrlME=
+
+Name: javax/persistence/criteria/CriteriaBuilder$Coalesce.class
+SHA1-Digest: JgnNmieIs2o9rovCt2aC2gYr5Nw=
+
+Name: javax/persistence/CacheRetrieveMode.class
+SHA1-Digest: y42bww+LsyyY1AA06MXhE7GqsHg=
+
+Name: javax/persistence/PrePersist.class
+SHA1-Digest: Z9fqy0GPYUSCB+/Z+LT6TqxGGKQ=
+
+Name: javax/persistence/InheritanceType.class
+SHA1-Digest: lmvELJ0mYSM16FarvszFH3MQWpU=
+
+Name: javax/persistence/PersistenceUnitUtil.class
+SHA1-Digest: ccN5rv/U2f1JbKp7fl4MT32wIXQ=
+
+Name: javax/persistence/Parameter.class
+SHA1-Digest: mS+MFbAZlj7kGOzcb44DGpzrKr8=
+
+Name: javax/persistence/StoredProcedureQuery.class
+SHA1-Digest: 3j6a5bIud02lISjH+sLdII8ixwc=
+
+Name: about.html
+SHA1-Digest: HxDhjklAgfoYOw0qI+hOzMgwGFA=
+
+Name: javax/persistence/spi/PersistenceProviderResolverHolder$DefaultP
+ ersistenceProviderResolver.class
+SHA1-Digest: nxt924Ifc4yXgnPk/s3ydrooU0Y=
+
+Name: javax/persistence/AssociationOverride.class
+SHA1-Digest: cZSXqP3H2Dk2EnocuYhkC/knGEg=
+
+Name: javax/persistence/PrimaryKeyJoinColumn.class
+SHA1-Digest: 237STtqoXgWezFErF5bCQNNK6IM=
+
+Name: javax/persistence/MapKeyJoinColumns.class
+SHA1-Digest: QEakJC06NNyFtnlZ9iPx/iUV37s=
+
+Name: javax/persistence/NoResultException.class
+SHA1-Digest: Mpxmd6wgrDJxqSLMRccNgtt2kx8=
+
+Name: javax/persistence/metamodel/SetAttribute.class
+SHA1-Digest: uae7Yx1ItNFQ1a0SWpLuGiQn3/g=
+
+Name: javax/persistence/SecondaryTables.class
+SHA1-Digest: T1ncGXmK3nUjMXDGkyESIitxrk4=
+
+Name: javax/persistence/spi/PersistenceProviderResolverHolder$DefaultP
+ ersistenceProviderResolver$1.class
+SHA1-Digest: NIju2fJnaZTecZ/qzFZljy7CKTA=
+
+Name: javax/persistence/EntityNotFoundException.class
+SHA1-Digest: leSVffAloNU1mPphaifPoy/Fh1k=
+
+Name: javax/persistence/orm_2_0.xsd
+SHA1-Digest: jE/1eVWXwk1cfCrjoIof+Z2quy4=
+
+Name: javax/persistence/PersistenceContext.class
+SHA1-Digest: DYg21wWrubjJM1N4SsN6ECpsYJQ=
+
+Name: javax/persistence/MapsId.class
+SHA1-Digest: 53/OxSbpANuELOtGLiue3XGhP7w=
+
+Name: javax/persistence/NonUniqueResultException.class
+SHA1-Digest: JIWAJpRWzbNOPUAyKmlaAKcTc+o=
+
+Name: javax/persistence/NamedNativeQueries.class
+SHA1-Digest: gndTMUvHPwtsxfzT+WrPmg+1/1Q=
+
+Name: javax/persistence/Transient.class
+SHA1-Digest: n0bk8QyInsZ1lfColtmXR2oxzgM=
+
+Name: javax/persistence/SqlResultSetMappings.class
+SHA1-Digest: zYSbJEu1XhETR1eXpRwo/mYr0UA=
+
+Name: javax/persistence/metamodel/Attribute.class
+SHA1-Digest: pSfKQYB8WX0ejnCNQ0ipda8hedk=
+
+Name: javax/persistence/JoinColumn.class
+SHA1-Digest: lrFClZxrI9eAx0kgjQbqGy9MNhg=
+
+Name: javax/persistence/GeneratedValue.class
+SHA1-Digest: FmmhAgEYuifZFKKloOq51TiA3J4=
+
+Name: javax/persistence/PrimaryKeyJoinColumns.class
+SHA1-Digest: xqAeCjSiXipdZD49X7pn1b8ecnw=
+
+Name: javax/persistence/criteria/CriteriaDelete.class
+SHA1-Digest: QZt/wNKBF2C6YNzHbrzzHhjznpw=
+
+Name: javax/persistence/criteria/Join.class
+SHA1-Digest: AUBVKZ+qBF2azhou+Y355n43vCg=
+
+Name: javax/persistence/metamodel/EntityType.class
+SHA1-Digest: eRuGD/ubg4zeGoZTHP9oiZQAST4=
+
+Name: javax/persistence/Persistence$PersistenceUtilImpl.class
+SHA1-Digest: SaujKt0xL4T6V6KdN45chP4Pohk=
+
+Name: javax/persistence/IdClass.class
+SHA1-Digest: ysjxHA1qf7ApZHsK7pVh33HdWAM=
+
+Name: javax/persistence/criteria/CriteriaBuilder$In.class
+SHA1-Digest: vs6VeOaRadI+Rwc15BkBpT7jbfY=
+
+Name: javax/persistence/PersistenceException.class
+SHA1-Digest: 0A3RMauxClAf4Be+a/h79Z6UqPU=
+
+Name: javax/persistence/criteria/ParameterExpression.class
+SHA1-Digest: n02Pe2RQP1M7m1mxFRbjnlmT5HQ=
+
+Name: javax/persistence/criteria/CriteriaBuilder$Case.class
+SHA1-Digest: Wi9Tr1vrJnvlLsGKDFoa2XQQTn4=
+
+Name: javax/persistence/spi/LoadState.class
+SHA1-Digest: +TDKs+Caec3cEMzOTBMmncuvmHI=
+
+Name: javax/persistence/NamedNativeQuery.class
+SHA1-Digest: +eH/kVjIXoWoLvApSjP77TJ0NSM=
+
+Name: javax/persistence/LockTimeoutException.class
+SHA1-Digest: JnqTthqn8CqPNjPFd0FTgSWb/lY=
+
+Name: javax/persistence/EntityGraph.class
+SHA1-Digest: eqz7WXCSnJp2nztpQiD0TPqV/4E=
+
+Name: javax/persistence/Basic.class
+SHA1-Digest: prI39wQ8dcqpsl83tVKAHrp8kDE=
+
+Name: javax/persistence/metamodel/ManagedType.class
+SHA1-Digest: oHRF3PW2LhnrrXxrhQivy1tA6vI=
+
+Name: javax/persistence/Convert.class
+SHA1-Digest: 5g/rNHM/GRqa0KPUzO8bdDaTy6o=
+
+Name: javax/persistence/MapKeyEnumerated.class
+SHA1-Digest: HF/4UAAZkH0Rrak9MC0473Ew3uE=
+
+Name: javax/persistence/spi/PersistenceProviderResolverHolder$DefaultP
+ ersistenceProviderResolver$CacheKeyReference.class
+SHA1-Digest: rVyqjstXcE3K1SmN6ts+2QZVn0g=
+
+Name: javax/persistence/NamedAttributeNode.class
+SHA1-Digest: nSBS8NLvTuuHI/+3wIeRLuqNL9w=
+
+Name: javax/persistence/criteria/CriteriaBuilder$SimpleCase.class
+SHA1-Digest: 23yQ01kaiqJ3eMPvzl6/oq2k9Mo=
+
+Name: javax/persistence/Embedded.class
+SHA1-Digest: vHJ2i1APm7rmvl9uJK++54AnQyU=
+
+Name: javax/persistence/metamodel/EmbeddableType.class
+SHA1-Digest: HhzwXV8igofhdtREpA/9qxbhD4s=
+
+Name: javax/persistence/Lob.class
+SHA1-Digest: LDCwZ03WdgnX2yAzxMPjgwgeoVk=
+
+Name: javax/persistence/UniqueConstraint.class
+SHA1-Digest: H+gCicvxMgG4H+hNiCX3Jcm3ifo=
+
+Name: javax/persistence/PersistenceUtil.class
+SHA1-Digest: J7eblFxQOQSZp6TnPc0g6FMiaHg=
+
+Name: javax/persistence/PersistenceUnits.class
+SHA1-Digest: pCR3xIzcVrMZqFD5I5/aEM1Qlvc=
+
+Name: org/eclipse/persistence/javax/persistence/osgi/OSGiProviderResol
+ ver.class
+SHA1-Digest: sTQQazB6bAyVes3wFJN14mpWgcc=
+
+Name: javax/persistence/PersistenceUnit.class
+SHA1-Digest: SdECJEZIFu0mkJr9lS99aQ1++HU=
+
+Name: javax/persistence/Tuple.class
+SHA1-Digest: T5pSwOFq+cIxv4Rwup1uyNkVe30=
+
+Name: javax/persistence/Column.class
+SHA1-Digest: Fvm6o3+Q3h+lYbX5waRpzPI0Umg=
+
+Name: javax/persistence/EntityManager.class
+SHA1-Digest: 4jUp6uGXTPPVIyJ7qAg0fhbw6bs=
+
+Name: javax/persistence/criteria/Order.class
+SHA1-Digest: X7TuZdjOJnnMs8QqqRn+DpFlUOI=
+
+Name: javax/persistence/Converts.class
+SHA1-Digest: 9AzfPD+JQ/EInRIs4wS4zOBsSgM=
+
+Name: javax/persistence/JoinColumns.class
+SHA1-Digest: iNtjLGbicyFnWPEQILl4b61YUYY=
+
+Name: javax/persistence/MapKeyTemporal.class
+SHA1-Digest: phDv0H/WznV+RuP6dWpNqjtDB78=
+
+Name: javax/persistence/PostLoad.class
+SHA1-Digest: TsdB9sjjPyjCjfNk36+k1aXx4xQ=
+
+Name: javax/persistence/EntityListeners.class
+SHA1-Digest: XTAS8jHMQ1jf8u06icL9iG/p8kQ=
+
+Name: javax/persistence/PersistenceContexts.class
+SHA1-Digest: rNg/BYHUJ2UchfNUkYVqyDPCYCA=
+
+Name: javax/persistence/DiscriminatorValue.class
+SHA1-Digest: IIYLYlIGvCQ31L1JJdA4S/426Xc=
+
+Name: javax/persistence/metamodel/MappedSuperclassType.class
+SHA1-Digest: uMCJG6wAz4Z8nEgWPAoLGj1rUI4=
+
+Name: readme.html
+SHA1-Digest: AfF5tSXYq4FzDnILXnN88koGq4I=
+
+Name: javax/persistence/criteria/CriteriaQuery.class
+SHA1-Digest: P7zb3X0P4Y2y8hyTC6jCeMvuFRg=
+
+Name: javax/persistence/metamodel/StaticMetamodel.class
+SHA1-Digest: F3Xcosy/TSNOb282TTqjnI4ad9A=
+
+Name: javax/persistence/persistence_1_0.xsd
+SHA1-Digest: wD354lhLF1kcSWNDaL5ykQe3oZE=
+
+Name: javax/persistence/EmbeddedId.class
+SHA1-Digest: /6MegvsVZxHQvO4AlQvTShIRpAY=
+
+Name: javax/persistence/SynchronizationType.class
+SHA1-Digest: lCVX86BLfniO//afV7N2kFm5ACY=
+
+Name: javax/persistence/LockModeType.class
+SHA1-Digest: Swomo2PXIa8oXkxMDZ8LN2C+rBU=
+
+Name: javax/persistence/criteria/CriteriaBuilder.class
+SHA1-Digest: W1Qun4dCb/1uPXthwg5uz7NriKM=
+

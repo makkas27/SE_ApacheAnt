@@ -8,7 +8,7 @@ let Ys = [];
 let results = [];
 
 let graph;
-const svgSize = 300;
+const svgSize = 320;
 
 window.onload = function () {
     graph = document.getElementById("graph_pic");
@@ -23,11 +23,11 @@ window.onload = function () {
 
 function processCoordinates(event) {
     const domRect = graph.getBoundingClientRect();
-    const rowX = event.pageX - domRect.x;
-    const rowY = event.pageY - domRect.y;
+    const rowX = event.clientX - domRect.x;
+    const rowY = event.clientY - domRect.y;
     r = document.getElementById("coordinates-form:rVal").value.trim();
-    x = ((r * (svgSize / 2 - rowX) * -1) / 100).toFixed(2);
-    yCoord = ((r * (svgSize / 2 - rowY)) / 100).toFixed(2);
+    x = ((r * (svgSize / 2 - rowX) * -1) / (320/3)).toFixed(2);
+    yCoord = ((r * (svgSize / 2 - rowY)) / (320/3)).toFixed(2);
     sendRequest(x, yCoord, r);
 }
 
@@ -51,6 +51,9 @@ function drawDots() {
             newDot.setAttribute("fill", "green");
         } else {
             newDot.setAttribute("fill", "red");
+        }
+        if (isNaN(thisX) || isNaN(thisY)) {
+            newDot.setAttribute("fill", "#c6d9e8");
         }
         newDot.setAttribute("cx", thisX.toString());
         newDot.setAttribute("cy", thisY.toString());

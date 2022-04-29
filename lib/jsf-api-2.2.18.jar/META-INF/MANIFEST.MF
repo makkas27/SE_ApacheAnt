@@ -1,0 +1,85 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: 1.6.0_65 (Sun Microsystems Inc.)
+Built-By: hudson_local
+Build-Jdk: 1.6.0_65
+Export-Package: javax.faces.render;uses:="javax.faces,javax.faces.comp
+ onent,javax.faces.application,javax.faces.context,javax.faces.convert
+ ,javax.faces.component.behavior";version="2.2",javax.faces.context;us
+ es:="javax.el,javax.faces.render,javax.faces.event,javax.faces,javax.
+ faces.component,javax.faces.application,javax.faces.lifecycle";versio
+ n="2.2",javax.faces.model;uses:="javax.faces,javax.servlet.jsp.jstl.s
+ ql";version="2.2",javax.faces.flow.builder;uses:="javax.faces.flow,ja
+ vax.el";version="2.2",javax.faces.view.facelets;uses:="javax.faces,ja
+ vax.el,javax.faces.component,javax.faces.context,javax.faces.view";ve
+ rsion="2.2",javax.faces.event;uses:="javax.el,javax.faces.context,jav
+ ax.faces,javax.faces.component,javax.faces.application,javax.faces.co
+ mponent.behavior,javax.faces.lifecycle";version="2.2",javax.faces.val
+ idator;uses:="javax.validation.groups,javax.el,javax.faces.context,ja
+ vax.faces,javax.faces.component,javax.faces.application,javax.validat
+ ion,javax.faces.el,javax.faces.convert";version="2.2",javax.faces.flo
+ w;uses:="javax.faces,javax.el,javax.faces.context,javax.faces.lifecyc
+ le";version="2.2",javax.faces;uses:="javax.faces.render,javax.faces.c
+ ontext,javax.faces.view.facelets,javax.servlet,javax.faces.flow,javax
+ .faces.application,javax.faces.component.visit,javax.faces.view,javax
+ .faces.lifecycle";version="2.2",javax.faces.component;uses:="javax.fa
+ ces.context,javax.faces.validator,javax.faces,javax.faces.application
+ ,javax.faces.el,javax.faces.component.visit,javax.faces.convert,javax
+ .el,javax.faces.render,javax.faces.model,javax.faces.event,javax.face
+ s.component.behavior,javax.faces.view,javax.servlet.jsp.jstl.sql,java
+ x.faces.lifecycle";version="2.2",javax.faces.application;uses:="javax
+ .el,javax.faces.render,javax.faces.context,javax.faces.event,javax.fa
+ ces.validator,javax.faces,javax.faces.flow,javax.faces.component,java
+ x.faces.el,javax.faces.convert,javax.faces.view,javax.faces.component
+ .behavior";version="2.2",javax.faces.bean;version="2.2",javax.faces.w
+ ebapp;uses:="javax.el,javax.faces.context,javax.faces.validator,javax
+ .faces.event,javax.servlet.annotation,javax.servlet.jsp,javax.servlet
+ ,javax.faces,javax.faces.component,javax.faces.application,javax.face
+ s.el,javax.faces.convert,javax.servlet.jsp.tagext,javax.faces.lifecyc
+ le,javax.servlet.http";version="2.2",javax.faces.component.html;uses:
+ ="javax.el,javax.faces.component,javax.faces.context,javax.faces.comp
+ onent.behavior";version="2.2",javax.faces.component.visit;uses:="java
+ x.faces,javax.faces.component,javax.faces.context";version="2.2",java
+ x.faces.el;uses:="javax.faces,javax.el,javax.faces.context";version="
+ 2.2",javax.faces.convert;uses:="javax.el,javax.faces.context,javax.fa
+ ces,javax.faces.component,javax.faces.application,javax.faces.el";ver
+ sion="2.2",javax.faces.view;uses:="javax.faces,javax.faces.component,
+ javax.faces.application,javax.faces.context";version="2.2",javax.face
+ s.component.behavior;uses:="javax.faces,javax.el,javax.faces.render,j
+ avax.faces.component,javax.faces.context,javax.faces.event";version="
+ 2.2",javax.faces.lifecycle;uses:="javax.faces,javax.faces.context,jav
+ ax.faces.event";version="2.2"
+Implementation-Title: Mojarra
+Probe-Provider-Xml-File-Names: META-INF/mojarra-jsf-api-probe-provider
+ .xml
+Tool: Bnd-0.0.249
+DSTAMP: 20180822
+TODAY: August 22 2018
+TSTAMP: 0304
+DocName: JavaServer Faces API
+Implementation-Vendor: Oracle America, Inc.
+JAVA_HOME: /scratch/hudson_local/jdk1.6.0_65
+Implementation-Vendor-Id: com.sun
+Specification-Title: JavaServer Faces
+Bundle-License: http://glassfish.java.net/nonav/public/CDDL+GPL.html
+LICENSEFILE: /scratch/hudson_local/.hudson/jobs/2_2_x-release/workspac
+ e/legal/jsf-cddl/LICENSE.txt
+Bundle-SymbolicName: javax.faces-api
+Extension-Name: javax.faces
+Implementation-Version: 2.2
+Bundle-Name: JavaServer Faces API 2.2.18 (20180822-0304)
+DynamicImport-Package: org.glassfish.flashlight.provider
+Bundle-Version: 2.2
+Bnd-LastModified: 1534932268065
+Bundle-ManifestVersion: 2
+Bundle-Description: Mojarra JSF API (javax.faces/2.2) 2.2.18 (20180822
+ -0304)
+Specification-Version: 2.2
+Include-Resource: META-INF=build/classes/META-INF,build/classes
+Import-Package: javax.el;version="2.2.1",javax.servlet;version="3.0",j
+ avax.servlet.annotation;version="3.0",javax.servlet.http;version="3.0
+ ",javax.servlet.jsp;version="2.1",javax.servlet.jsp.jstl.sql;version=
+ "1.2",javax.servlet.jsp.tagext;version="2.1",javax.validation;resolut
+ ion:=optional,javax.validation.groups;resolution:=optional
+Bundle-DocURL: http://download.oracle.com/javaee/6/api/
+

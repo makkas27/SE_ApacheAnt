@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.4
+Created-By: 1.8.0_131-b11 (Oracle Corporation)
+Specification-Title: Eclipse Persistence Services
+Specification-Vendor: Eclipse.org - EclipseLink Project
+Specification-Version: 2.7.1
+Implementation-Title: org.eclipse.persistence
+Implementation-Vendor: Eclipse.org - EclipseLink Project
+Implementation-Version: 2.7.1.v20171221-bd47e8f
+Release-Designation: EclipseLink 2.7.1
+Premain-Class: org.eclipse.persistence.internal.jpa.deployment.JavaSEC
+ MPInitializerAgent
+Main-Class: org.eclipse.persistence.Version
+

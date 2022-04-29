@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="web3" basedir=".">
+    <property file="build.properties"/>
+
+    <path id="classpath">
+        <pathelement location="lib/eclipselink-2.7.1.jar"/>
+        <pathelement location="lib/javax.persistence-2.2.0.jar"/>
+        <pathelement location="lib/javax.persistence-api-2.2.jar"/>
+        <pathelement location="lib/jsf-api-2.2.18.jar"/>
+        <pathelement location="lib/jsf-impl-2.2.18.jar"/>
+        <pathelement location="lib/jstl-1.2.jar"/>
+        <pathelement location="lib/postgresql-42.2.20.jar"/>
+        <pathelement location="lib/primefaces-7.0.jar"/>
+        <pathelement location="lib/validation-api-1.1.0.Final.jar"/>
+        <!--        <fileset dir="src" includes="*.jar"/>-->
+    </path>
+
+    <target name="clean">
+        <delete dir="${compiled}"/>
+        <echo>Cleaning succeeded:)</echo>
+    </target>
+
+    <target name="compile" depends="clean">
+        <echo>Compilation in process...</echo>
+        <mkdir dir="${compiled}"/>
+        <javac srcdir="${src}" destdir="${compiled}" includeantruntime="false">
+            <classpath>
+                <path refid="classpath"/>
+            </classpath>
+        </javac>
+        <echo>Compilation succeeded:)</echo>
+    </target>
+
+    <target name="build" depends="music, compile">
+        <echo>Building in process...</echo>
+        <mkdir dir="${build.classes}"/>
+        <jar destfile="${build.classes}/${project}" basedir="${compiled}">
+            <manifest file="kk">
+                <attribute name="Manifest-Version" value="1.0"/>
+                <attribute name="Main-Class" value="Main"/>
+            </manifest>
+        </jar>
+        <echo>Building succeeded:)</echo>
+    </target>
+
+    <target name="music">
+        <sound>
+            <success source="${success}" duration="6000"/>
+            <fail source="${fail}" duration="5000"/>
+        </sound>
+    </target>
+
+</project>
