@@ -10,13 +10,13 @@
     </taskdef>
 
     <path id="classpath">
-        <pathelement location="lib/eclipselink-2.7.1.jar"/>
-        <pathelement location="lib/javax.persistence-api-2.2.jar"/>
-        <pathelement location="lib/jsf-api-2.2.18.jar"/>
-        <pathelement location="lib/jsf-impl-2.2.18.jar"/>
-        <pathelement location="lib/jstl-1.2.jar"/>
-        <pathelement location="lib/postgresql-42.2.20.jar"/>
-        <pathelement location="lib/primefaces-7.0.jar"/>
+        <pathelement location="${dep1}"/>
+        <pathelement location="${dep2}"/>
+        <pathelement location="${dep3}"/>
+        <pathelement location="${dep4}"/>
+        <pathelement location="${dep5}"/>
+        <pathelement location="${dep6}"/>
+        <pathelement location="${dep7}"/>
         <!--        <fileset dir="src" includes="*.jar"/>-->
     </path>
 
