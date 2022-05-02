@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="web3" basedir=".">
+<project name="web3" xmlns:ivy="antlib:org.apache.ivy.ant">
     <property file="build.properties"/>
+
+    <target name="download-ivy" unless="offline">
+
+        <mkdir dir="${ivy.jar.dir}"/>
+        <!-- download Ivy from web site so that it can be used even without any special installation -->
+        <get src="https://repo1.maven.org/maven2/org/apache/ivy/ivy/${ivy.install.version}/ivy-${ivy.install.version}.jar"
+             dest="${ivy.jar.file}" usetimestamp="true"/>
+    </target>
+
+    <target name="init-ivy" depends="download-ivy">
+        <!-- try to load Ivy here from Ivy home, in case the user has not already dropped
+                it into Ant's lib dir (note that the latter copy will always take precedence).
+                We will not fail as long as local lib dir exists (it may be empty) and
+                Ivy is in at least one of Ant's lib dir or the local lib dir. -->
+        <path id="ivy.lib.path">
+            <fileset dir="${ivy.jar.dir}" includes="*.jar"/>
+
+        </path>
+        <taskdef resource="org/apache/ivy/ant/antlib.xml"
+                 uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
+    </target>
+
+    <target name="resolve" description="Use ivy to resolve classpaths">
+        <ivy:resolve/>
+
+        <ivy:report todir='build/ivy' graph='false' xml='false'/>
+        <ivy:cachepath pathid="runtime.dependencies" conf="runtime"/>
+        <ivy:cachepath pathid="test.dependencies" conf="test"/>
+    </target>
+
+    <target name="retrive" depends="resolve" description="Use ivy to resolve classpaths">
+        <ivy:retrieve sync="true" type="jar" pattern="${lib.dir}/[conf]/[artifact].[ext]"/>
+    </target>
 
     <!--    need to add ant-contrib-1.0b3.jar to ${ANT_HOME}/lib to make it work-->
     <taskdef resource="net/sf/antcontrib/antlib.xml">
@@ -9,28 +42,28 @@
         </classpath>
     </taskdef>
 
-    <path id="dependency">
-        <pathelement location="${dep1}"/>
-        <pathelement location="${dep2}"/>
-        <pathelement location="${dep3}"/>
-        <pathelement location="${dep4}"/>
-        <pathelement location="${dep5}"/>
-        <pathelement location="${dep6}"/>
-        <pathelement location="${dep7}"/>
-        <!--        <fileset dir="src" includes="*.jar"/>-->
-    </path>
+<!--    <path id="dependency">-->
+<!--        <pathelement location="${dep1}"/>-->
+<!--        <pathelement location="${dep2}"/>-->
+<!--        <pathelement location="${dep3}"/>-->
+<!--        <pathelement location="${dep4}"/>-->
+<!--        <pathelement location="${dep5}"/>-->
+<!--        <pathelement location="${dep6}"/>-->
+<!--        <pathelement location="${dep7}"/>-->
+<!--        &lt;!&ndash;        <fileset dir="src" includes="*.jar"/>&ndash;&gt;-->
+<!--    </path>-->
 
     <target name="clean">
         <delete dir="${compiled}"/>
         <echo>Cleaning succeeded:)</echo>
     </target>
 
-    <target name="compile" depends="clean">
+    <target name="compile" depends="clean, retrive">
         <echo>Compilation in process...</echo>
         <mkdir dir="${compiled}"/>
         <javac srcdir="${src}" destdir="${compiled}" includeantruntime="false">
             <classpath>
-                <path refid="dependency"/>
+                <path refid="runtime.dependencies"/>
             </classpath>
         </javac>
         <echo>Compilation succeeded:)</echo>
