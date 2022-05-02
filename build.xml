@@ -44,7 +44,7 @@
 
 
     <target name="clean">
-        <delete dir="${main.compiled}"/>
+        <delete dir="${tmp}"/>
         <echo>Cleaning succeeded:)</echo>
     </target>
 
