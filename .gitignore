@@ -1,6 +1,7 @@
 target
 .idea
 ant
+build
 ivy-cache
 lib
 src/main/resources/META-INF/persistence.xml
