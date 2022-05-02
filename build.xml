@@ -42,26 +42,16 @@
         </classpath>
     </taskdef>
 
-<!--    <path id="dependency">-->
-<!--        <pathelement location="${dep1}"/>-->
-<!--        <pathelement location="${dep2}"/>-->
-<!--        <pathelement location="${dep3}"/>-->
-<!--        <pathelement location="${dep4}"/>-->
-<!--        <pathelement location="${dep5}"/>-->
-<!--        <pathelement location="${dep6}"/>-->
-<!--        <pathelement location="${dep7}"/>-->
-<!--        &lt;!&ndash;        <fileset dir="src" includes="*.jar"/>&ndash;&gt;-->
-<!--    </path>-->
 
     <target name="clean">
-        <delete dir="${compiled}"/>
+        <delete dir="${main.compiled}"/>
         <echo>Cleaning succeeded:)</echo>
     </target>
 
     <target name="compile" depends="clean, retrive">
         <echo>Compilation in process...</echo>
-        <mkdir dir="${compiled}"/>
-        <javac srcdir="${src}" destdir="${compiled}" includeantruntime="false">
+        <mkdir dir="${main.compiled}"/>
+        <javac srcdir="${src.main}" destdir="${main.compiled}" includeantruntime="false">
             <classpath>
                 <path refid="runtime.dependencies"/>
             </classpath>
@@ -73,7 +63,7 @@
         <echo>Building in process...</echo>
         <mkdir dir="${build}"/>
         <jar destfile="${build.jar}/${project}.jar">
-            <fileset dir="${compiled}"/>
+            <fileset dir="${main.compiled}"/>
             <fileset dir="${src.main.resources}"/>
             <fileset dir="${src.main.webapp}"/>
             <manifest>
@@ -82,6 +72,30 @@
             </manifest>
         </jar>
         <echo>Building succeeded:)</echo>
+    </target>
+
+    <target name="test-compile" depends="compile">
+        <mkdir dir="${test.compiled}"/>
+        <javac srcdir="${src.test}" destdir="${test.compiled}" includeAntRuntime="false">
+            <classpath>
+                <path refid="test.dependencies"/>
+                <pathelement location="${main.compiled}"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="test" depends="test-compile">
+        <junit printsummary="on" haltonfailure="yes">
+            <classpath>
+                <path refid="test.dependencies"/>
+                <pathelement location="${main.compiled}"/>
+                <pathelement location="${test.compiled}"/>
+            </classpath>
+            <formatter type="brief" usefile="false"/>
+            <batchtest>
+                <fileset dir="${src.test}" includes="**/*Test.java"/>
+            </batchtest>
+        </junit>
     </target>
 
     <target name="music">
