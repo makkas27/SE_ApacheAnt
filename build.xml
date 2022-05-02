@@ -9,7 +9,7 @@
         </classpath>
     </taskdef>
 
-    <path id="classpath">
+    <path id="dependency">
         <pathelement location="${dep1}"/>
         <pathelement location="${dep2}"/>
         <pathelement location="${dep3}"/>
@@ -30,7 +30,7 @@
         <mkdir dir="${compiled}"/>
         <javac srcdir="${src}" destdir="${compiled}" includeantruntime="false">
             <classpath>
-                <path refid="classpath"/>
+                <path refid="dependency"/>
             </classpath>
         </javac>
         <echo>Compilation succeeded:)</echo>
@@ -38,8 +38,11 @@
 
     <target name="build" depends="music, compile">
         <echo>Building in process...</echo>
-        <mkdir dir="${build.classes}"/>
-        <jar destfile="${build.classes}/${project}" basedir="${compiled}">
+        <mkdir dir="${build}"/>
+        <jar destfile="${build.jar}/${project}.jar">
+            <fileset dir="${compiled}"/>
+            <fileset dir="${src.main.resources}"/>
+            <fileset dir="${src.main.webapp}"/>
             <manifest>
                 <attribute name="Manifest-Version" value="1.0"/>
                 <attribute name="Main-Class" value="Main"/>
@@ -50,8 +53,8 @@
 
     <target name="music">
         <sound>
-            <success source="${success}" duration="6000"/>
-            <fail source="${fail}" duration="5000"/>
+            <success source="${sounds.success}" duration="6000"/>
+            <fail source="${sounds.fail}" duration="5000"/>
         </sound>
     </target>
 
