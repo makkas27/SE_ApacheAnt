@@ -83,15 +83,15 @@ public class Point {
         points.add(pointDB);
     }
 
-    private boolean isInTriangle() {
+    public boolean isInTriangle() {
         return xCoordinate >= 0 && yCoordinate <= 0 && yCoordinate >= xCoordinate - rValue / 2;
     }
 
-    private boolean isInRectangle() {
+    public boolean isInRectangle() {
         return xCoordinate <= 0 && yCoordinate >= 0 && yCoordinate <= rValue && xCoordinate >= -rValue;
     }
 
-    private boolean isInCircle() {
+    public boolean isInCircle() {
         return xCoordinate <= 0 && yCoordinate <= 0 && xCoordinate * xCoordinate + yCoordinate * yCoordinate <= rValue * rValue;
     }
 
