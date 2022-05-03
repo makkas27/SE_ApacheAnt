@@ -12,15 +12,16 @@
         <dependency org="org.apache.ant" name="ant-junit4" rev="1.8.4" conf="test->default"/>
         <dependency org="junit" name="junit" rev="4.13.1" conf="test->default"/>
 
+        <dependency org="javax.persistence" name="javax.persistence-api" rev="2.2" conf="runtime->default"/>
+        <dependency org="org.eclipse.persistence" name="eclipselink" rev="2.7.1" conf="test->default"/>
+<!--        <dependency org="org.eclipse.persistence" name="org.eclipse.persistence.jpa" rev="2.7.1" conf="test->default"/>-->
 
 
-        <dependency org="org.eclipse.persistence" name="eclipselink" rev="2.7.1"/>
-        <dependency org="javax.persistence" name="javax.persistence-api" rev="2.2"/>
-<!--        <dependency org="com.sun.faces" name="jsf-api" rev="2.2.18"/>-->
+        <!--        <dependency org="com.sun.faces" name="jsf-api" rev="2.2.18"/>-->
 <!--        <dependency org="com.sun.faces" name="jsf-impl" rev="2.2.18"/>-->
 <!--        <dependency org="jstl" name="jstl" rev="1.2"/>-->
-        <dependency org="org.primefaces" name="primefaces" rev="7.0"/>
-        <dependency org="org.postgresql" name="postgresql" rev="42.2.20"/>
+        <dependency org="org.primefaces" name="primefaces" rev="7.0" conf="runtime->default"/>
+        <dependency org="org.postgresql" name="postgresql" rev="42.2.20" conf="runtime->default"/>
 
         <dependency org="javax.servlet" name="javax.servlet-api" rev="4.0.1" conf="runtime->default"/>
         <dependency org="javax.annotation" name="javax.annotation-api" rev="1.3.2" conf="runtime->default"/>
