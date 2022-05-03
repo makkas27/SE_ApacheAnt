@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="web3" basedir=".">
+<project name="web3" xmlns:ivy="antlib:org.apache.ivy.ant">
     <property file="build.properties"/>
+
+    <target name="download-ivy" unless="offline">
+
+        <mkdir dir="${ivy.jar.dir}"/>
+        <!-- download Ivy from web site so that it can be used even without any special installation -->
+        <get src="https://repo1.maven.org/maven2/org/apache/ivy/ivy/${ivy.install.version}/ivy-${ivy.install.version}.jar"
+             dest="${ivy.jar.file}" usetimestamp="true"/>
+    </target>
+
+    <target name="init-ivy" depends="download-ivy">
+        <!-- try to load Ivy here from Ivy home, in case the user has not already dropped
+                it into Ant's lib dir (note that the latter copy will always take precedence).
+                We will not fail as long as local lib dir exists (it may be empty) and
+                Ivy is in at least one of Ant's lib dir or the local lib dir. -->
+        <path id="ivy.lib.path">
+            <fileset dir="${ivy.jar.dir}" includes="*.jar"/>
+
+        </path>
+        <taskdef resource="org/apache/ivy/ant/antlib.xml"
+                 uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
+    </target>
+
+    <target name="resolve" description="Use ivy to resolve classpaths">
+        <ivy:resolve/>
+
+        <ivy:report todir='build/ivy' graph='false' xml='false'/>
+        <ivy:cachepath pathid="runtime.dependencies" conf="runtime"/>
+        <ivy:cachepath pathid="test.dependencies" conf="test"/>
+    </target>
+
+    <target name="retrive" depends="resolve" description="Use ivy to resolve classpaths">
+        <ivy:retrieve sync="true" type="jar" pattern="${lib.dir}/[conf]/[artifact].[ext]"/>
+    </target>
 
     <!--    need to add ant-contrib-1.0b3.jar to ${ANT_HOME}/lib to make it work-->
     <taskdef resource="net/sf/antcontrib/antlib.xml">
@@ -9,28 +42,18 @@
         </classpath>
     </taskdef>
 
-    <path id="classpath">
-        <pathelement location="${dep1}"/>
-        <pathelement location="${dep2}"/>
-        <pathelement location="${dep3}"/>
-        <pathelement location="${dep4}"/>
-        <pathelement location="${dep5}"/>
-        <pathelement location="${dep6}"/>
-        <pathelement location="${dep7}"/>
-        <!--        <fileset dir="src" includes="*.jar"/>-->
-    </path>
 
     <target name="clean">
-        <delete dir="${compiled}"/>
+        <delete dir="${main.compiled}"/>
         <echo>Cleaning succeeded:)</echo>
     </target>
 
-    <target name="compile" depends="clean">
+    <target name="compile" depends="clean, retrive">
         <echo>Compilation in process...</echo>
-        <mkdir dir="${compiled}"/>
-        <javac srcdir="${src}" destdir="${compiled}" includeantruntime="false">
+        <mkdir dir="${main.compiled}"/>
+        <javac srcdir="${src.main}" destdir="${main.compiled}" includeantruntime="false">
             <classpath>
-                <path refid="classpath"/>
+                <path refid="runtime.dependencies"/>
             </classpath>
         </javac>
         <echo>Compilation succeeded:)</echo>
@@ -38,8 +61,11 @@
 
     <target name="build" depends="music, compile">
         <echo>Building in process...</echo>
-        <mkdir dir="${build.classes}"/>
-        <jar destfile="${build.classes}/${project}" basedir="${compiled}">
+        <mkdir dir="${build}"/>
+        <jar destfile="${build.jar}/${project}.jar">
+            <fileset dir="${main.compiled}"/>
+            <fileset dir="${src.main.resources}"/>
+            <fileset dir="${src.main.webapp}"/>
             <manifest>
                 <attribute name="Manifest-Version" value="1.0"/>
                 <attribute name="Main-Class" value="Main"/>
@@ -48,10 +74,34 @@
         <echo>Building succeeded:)</echo>
     </target>
 
+    <target name="test-compile" depends="compile">
+        <mkdir dir="${test.compiled}"/>
+        <javac srcdir="${src.test}" destdir="${test.compiled}" includeAntRuntime="false">
+            <classpath>
+                <path refid="test.dependencies"/>
+                <pathelement location="${main.compiled}"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="test" depends="test-compile">
+        <junit printsummary="on" haltonfailure="yes">
+            <classpath>
+                <path refid="test.dependencies"/>
+                <pathelement location="${main.compiled}"/>
+                <pathelement location="${test.compiled}"/>
+            </classpath>
+            <formatter type="brief" usefile="false"/>
+            <batchtest>
+                <fileset dir="${src.test}" includes="**/*Test.java"/>
+            </batchtest>
+        </junit>
+    </target>
+
     <target name="music">
         <sound>
-            <success source="${success}" duration="6000"/>
-            <fail source="${fail}" duration="5000"/>
+            <success source="${sounds.success}" duration="6000"/>
+            <fail source="${sounds.fail}" duration="5000"/>
         </sound>
     </target>
 
