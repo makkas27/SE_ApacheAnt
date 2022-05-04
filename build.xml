@@ -5,7 +5,7 @@
     <target name="download-ivy" unless="offline">
         <mkdir dir="${ivy.jar.dir}"/>
         <!-- download Ivy from web site so that it can be used even without any special installation -->
-        <get src="https://repo1.maven.org/maven2/org/apache/ivy/ivy/${ivy.install.version}/ivy-${ivy.install.version}.jar"
+        <get src="https://repo1.maven.org/maven2/org/apache/ivy/ivy/2.5.0/ivy-2.5.0.jar"
              dest="${ivy.jar.file}" usetimestamp="true"/>
     </target>
 
@@ -21,7 +21,7 @@
                  uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
     </target>
 
-    <target name="resolve" description="Use ivy to resolve classpaths">
+    <target name="resolve" description="Use ivy to resolve classpaths" depends="init-ivy">
         <ivy:resolve/>
         <ivy:report todir='build/ivy' graph='false' xml='false'/>
         <ivy:cachepath pathid="runtime.dependencies" conf="runtime"/>
@@ -41,7 +41,7 @@
 
 
     <target name="clean">
-        <delete dir="${main.compiled}"/>
+        <delete dir="${tmp}"/>
         <echo>Cleaning succeeded:)</echo>
     </target>
 
